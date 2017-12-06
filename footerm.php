@@ -1,32 +1,5 @@
 
 
-    <div class="container">
-        <form class="form-horizontal" action="addmentor.php" method="POST">
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="name">Name:</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="email">Email:</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="number">Number of mentorees:</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="number" placeholder="Enter password" min="3" name="maxcount">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-default">Submit</button>
-            </div>
-          </div>
-        </form> 
-    </div>
 
     <!-- Footer -->
     <footer>

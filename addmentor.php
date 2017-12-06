@@ -12,7 +12,7 @@
     if ($ret) {
         echo "<center>Congratulations mentor added</center>";
     } else {
-        echo "Oops! Try again";
+        echo "<center>Oops! Try again</center>";
     }
     include("mfooter.php");
     
