@@ -1,12 +1,19 @@
 <?php
 
-    $_POST('');
-    $_POST('');
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $maxcount = $_POST['maxcount'];
 
+    $connect = mysqli_connect("127.0.0.1", "root", "", "mentors");
 
-    $connect = mysqli_connect("localhost", "root", "", "mentor");
+    $ret = mysqli_query($connect, "INSERT INTO `mentorreg`(`id`, `mentorName`, `email`, `maxCount`) VALUES ('','$name','$email',$maxcount)");
 
-
-    mysqli_query($connect, "INSERT INTO `mentors_data`(`id`, `mentorName`, `maxCount`, `mentoree1`, `mentoree2`, `mentoree3`) VALUES ('','','','','','')")
-
+    include("header.php");
+    if ($ret) {
+        echo "<center>Congratulations mentor added</center>";
+    } else {
+        echo "Oops! Try again";
+    }
+    include("mfooter.php");
+    
 ?>
