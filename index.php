@@ -97,8 +97,6 @@ if (isset($authUrl)){
 	$user_count = $result->fetch_all()->usercount; //will return 0 if user doesn't exist
   
   $mysqli->query("CREATE TABLE IF NOT EXISTS `google_users_mentors` (`google_id` decimal(21,0) NOT NULL, `google_name` varchar(60) NOT NULL, `google_email` varchar(60) NOT NULL, `google_link` varchar(60) NOT NULL, `google_picture_link` varchar(60) NOT NULL, `max_count` int(11) NOT NULL DEFAULT '3', PRIMARY KEY (`google_id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1");
-
-echo "This something";
   $_SESSION['userid']=$user->id;
   
 	
