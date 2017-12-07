@@ -2,7 +2,7 @@
 
 $userid = $_SESSION['userid'];
 
-$connect = mysqli_connect("localhost", "b061db06849ed7", "e5239436", " heroku_fbd4d972ab0bf1a");
+$connect = mysqli_connect("us-cdbr-iron-east-05.cleardb.net", "b061db06849ed7", "e5239436", " heroku_fbd4d972ab0bf1a");
 
 $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors`");
 
