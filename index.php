@@ -10,8 +10,8 @@ $client_secret = 'dPQwxQxx7xf92EeN38IfyAI9';
 $redirect_uri = 'https://mentor-portal.herokuapp.com';
 
 //database
-$db_username = ""; //Database Username
-$db_password = ""; //Database Password
+$db_username = "b061db06849ed7"; //Database Username
+$db_password = "e5239436"; //Database Password
 $host_name = "127.0.0.1"; //Mysql Hostname
 $db_name = 'id3910036_mentors'; //Database Name
 
@@ -84,15 +84,15 @@ if (isset($authUrl)){
 	$user = $service->userinfo->get(); //get user info 
 	
 	// connect to database
-  $mysqli = mysqli_connect("127.0.0.1", "id3910036_harshri", "harshsri", "id3910036_mentors");
+  $mysqli = mysqli_connect("127.0.0.1", "b061db06849ed7", "e5239436", " heroku_fbd4d972ab0bf1a");
   //$mysqli = mysqli_connect("127.0.0.1", "root", "", "mentors");
     if ($mysqli->connect_error) {
         die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
     }
 	
 	//check if user exist in database using COUNT
-  //$result = $mysqli->query("SELECT COUNT(google_id) as usercount FROM google_users_mentors WHERE google_id=$user->id");
-  $result = $mysqli->query("SELECT COUNT(google_id) as usercount FROM google_users WHERE google_id=$user->id");
+  $result = $mysqli->query("SELECT COUNT(google_id) as usercount FROM google_users_mentors WHERE google_id=$user->id");
+  //$result = $mysqli->query("SELECT COUNT(google_id) as usercount FROM google_users WHERE google_id=$user->id");
 	$user_count = $result->fetch_object()->usercount; //will return 0 if user doesn't exist
   
   $_SESSION['userid']=$user->id;
@@ -102,17 +102,17 @@ if (isset($authUrl)){
 	
 	if($user_count)
     {
-      include("selectmentor.php");
-      //include("mentor.php");
+      //include("selectmentor.php");
+      include("mentor.php");
     }
 	else
 	{ 
-    //$statement = $mysqli->prepare("INSERT INTO google_users_mentors (google_id, google_name, google_email, google_link, google_picture_link) VALUES (?,?,?,?,?)");
-    $statement = $mysqli->prepare("INSERT INTO google_users (google_id, google_name, google_email, google_link, google_picture_link) VALUES (?,?,?,?,?)");
+    $statement = $mysqli->prepare("INSERT INTO google_users_mentors (google_id, google_name, google_email, google_link, google_picture_link) VALUES (?,?,?,?,?)");
+    //$statement = $mysqli->prepare("INSERT INTO google_users (google_id, google_name, google_email, google_link, google_picture_link) VALUES (?,?,?,?,?)");
 		$statement->bind_param('issss', $user->id,  $user->name, $user->email, $user->link, $user->picture);
     $statement->execute();
-    include("selectmentor.php");
-    //include("mentor.php");
+    //include("selectmentor.php");
+    include("mentor.php");
 
     }
 	
