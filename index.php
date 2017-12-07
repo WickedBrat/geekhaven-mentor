@@ -89,29 +89,33 @@ if (isset($authUrl)){
     }
 	
 	//check if user exist in database using COUNT
-	$result = $mysqli->query("SELECT COUNT(google_id) as usercount FROM google_users WHERE google_id=$user->id");
+  $result = $mysqli->query("SELECT COUNT(google_id) as usercount FROM google_users_mentors WHERE google_id=$user->id");
+  //$result = $mysqli->query("SELECT COUNT(google_id) as usercount FROM google_users WHERE google_id=$user->id");
 	$user_count = $result->fetch_object()->usercount; //will return 0 if user doesn't exist
   
+  $_SESSION['userid']=$user->id;
   
-  include("mentor.php");
-	//show user picture
-	/*echo '<img src="'.$user->picture.'" style="float: right;margin-top: 33px;" />';
+  //include("mentor.php");
+    //include("selectmentor.php");
 	
-	if($user_count) //if user already exist change greeting text to "Welcome Back"
+	if($user_count)
     {
-        echo 'Welcome back '.$user->name.'! [<a href="'.$redirect_uri.'?logout">Log Out</a>]';
+      //include("selectmentor.php");
+      include("mentor.php");
     }
-	else //else greeting text "Thanks for registering"
+	else
 	{ 
-        echo 'Hi '.$user->name.', Thanks for Registering! [<a href="'.$redirect_uri.'?logout">Log Out</a>]';
-		$statement = $mysqli->prepare("INSERT INTO google_users (google_id, google_name, google_email, google_link, google_picture_link) VALUES (?,?,?,?,?)");
+    $statement = $mysqli->prepare("INSERT INTO google_users_mentors (google_id, google_name, google_email, google_link, google_picture_link) VALUES (?,?,?,?,?)");
+    //$statement = $mysqli->prepare("INSERT INTO google_users (google_id, google_name, google_email, google_link, google_picture_link) VALUES (?,?,?,?,?)");
 		$statement->bind_param('issss', $user->id,  $user->name, $user->email, $user->link, $user->picture);
-		$statement->execute();
-		echo $mysqli->error;
+    $statement->execute();
+    //include("selectmentor.php");
+    include("mentor.php");
+
     }
 	
-	//print user details
-	echo '<pre>';
+
+/*	echo '<pre>';
 	print_r($user);
 	echo '</pre>';*/
 }
