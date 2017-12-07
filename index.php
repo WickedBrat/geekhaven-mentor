@@ -84,7 +84,8 @@ if (isset($authUrl)){
 	$user = $service->userinfo->get(); //get user info 
 	
 	// connect to database
-	$mysqli = mysqli_connect("127.0.0.1", "root", "", "mentors");;
+  $mysqli = mysqli_connect("127.0.0.1", "id3910036_harshri", "harshsri", "mentors");
+  //$mysqli = mysqli_connect("127.0.0.1", "root", "", "mentors");
     if ($mysqli->connect_error) {
         die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
     }
