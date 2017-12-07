@@ -7,13 +7,13 @@ require_once ('libraries/Google/autoload.php');
 //You can get it from : https://console.developers.google.com/
 $client_id = '901718618399-3fda2k6do4hnfgc99jl6ga97ho3mbiid.apps.googleusercontent.com'; 
 $client_secret = 'dPQwxQxx7xf92EeN38IfyAI9';
-$redirect_uri = 'http://localhost:5000';
+$redirect_uri = 'https://mentor-portal.000webhostapp.com';
 
 //database
 $db_username = ""; //Database Username
 $db_password = ""; //Database Password
 $host_name = "127.0.0.1"; //Mysql Hostname
-$db_name = 'mentors'; //Database Name
+$db_name = 'id3910036_mentors'; //Database Name
 
 //incase of logout request, just unset the session var
 if (isset($_GET['logout'])) {
@@ -84,7 +84,7 @@ if (isset($authUrl)){
 	$user = $service->userinfo->get(); //get user info 
 	
 	// connect to database
-  $mysqli = mysqli_connect("127.0.0.1", "id3910036_harshri", "harshsri", "mentors");
+  $mysqli = mysqli_connect("127.0.0.1", "id3910036_harshri", "harshsri", "id3910036_mentors");
   //$mysqli = mysqli_connect("127.0.0.1", "root", "", "mentors");
     if ($mysqli->connect_error) {
         die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);

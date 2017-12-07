@@ -7,7 +7,7 @@
     $email = $_POST['email'];
     $maxcount = $_POST['maxcount'];
 
-    $connect = mysqli_connect("127.0.0.1", "root", "", "mentors");
+    $connect = mysqli_connect("127.0.0.1", "root", "", "id3910036_mentors");
 
     $ret = mysqli_query($connect, "UPDATE `google_users_mentors` SET `max_count`=$maxcount WHERE google_id=$userid");
 

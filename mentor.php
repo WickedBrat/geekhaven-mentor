@@ -69,7 +69,7 @@
 
 <?php 
 
-    $connect = mysqli_connect("127.0.0.1", "root", "", "mentors");
+    $connect = mysqli_connect("127.0.0.1", "root", "", "id3910036_mentors");
 
     $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors` WHERE google_id=$user->id");
 
