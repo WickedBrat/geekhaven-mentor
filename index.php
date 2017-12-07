@@ -7,7 +7,7 @@ require_once ('libraries/Google/autoload.php');
 //You can get it from : https://console.developers.google.com/
 $client_id = '901718618399-3fda2k6do4hnfgc99jl6ga97ho3mbiid.apps.googleusercontent.com'; 
 $client_secret = 'dPQwxQxx7xf92EeN38IfyAI9';
-$redirect_uri = 'https://mentor-portal.herokuapp.com/';
+$redirect_uri = 'https://mentor-portal.herokuapp.com';
 
 //database
 $db_username = ""; //Database Username
