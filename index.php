@@ -81,10 +81,10 @@ if (isset($authUrl)){
 	
 } else {
 	
-	$user = $service->userinfo->get(); //get user info 
-	
+  $user = $service->userinfo->get(); //get user info 
+  
 	// connect to database
-  $mysqli = mysqli_connect("us-cdbr-iron-east-05.cleardb.net", "b061db06849ed7", "e5239436", " heroku_fbd4d972ab0bf1a");
+  $mysqli = mysqli_connect("us-cdbr-iron-east-05.cleardb.net", "b061db06849ed7", "e5239436", "heroku_fbd4d972ab0bf1a");
   //$mysqli = mysqli_connect("127.0.0.1", "root", "", "mentors");
     if ($mysqli->connect_error) {
         die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
