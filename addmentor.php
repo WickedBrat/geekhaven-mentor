@@ -23,7 +23,9 @@ session_start();
             }
             include("mfooter.php");
     } else {
+        include("header.php");
         echo "<center>Try entering something realistic :p</center>";
+        include("mfooter.php");
     }
     
 
