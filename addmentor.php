@@ -11,16 +11,22 @@ session_start();
 
     $connect = mysqli_connect("us-cdbr-iron-east-05.cleardb.net", "b061db06849ed7", "e5239436", "heroku_fbd4d972ab0bf1a");
 
-    $ret = mysqli_query($connect, "UPDATE `google_users_mentors` SET `max_count`=$maxcount WHERE google_id=$userid");
-
-    include("header.php");
-    if ($ret) {
-        echo "<center>Congratulations! mentee count updated</center>";
+    if ($maxcount>3 && $maxcount<6) {
+        $ret = mysqli_query($connect, "UPDATE `google_users_mentors` SET `max_count`=$maxcount WHERE google_id=$userid");
         
+            include("header.php");
+            if ($ret) {
+                echo "<center>Congratulations! mentee count updated</center>";
+                
+            } else {
+                echo "<center>Oops! Try again</center>";
+            }
+            include("mfooter.php");
     } else {
-        echo "<center>Oops! Try again</center>";
+        echo "<center>Try entering something realistic :p</center>";
     }
-    include("mfooter.php");
+    
+
 } else {
     include("headerl.php");
     echo '<div align="center">';

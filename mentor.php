@@ -96,7 +96,7 @@
           <div class="form-group">
             <label class="control-label col-sm-2" for="number">Number of mentees:</label>
             <div class="col-sm-10">
-              <input type="number" class="form-control" id="number" placeholder="Enter password" min="3" name="maxcount">
+              <input type="number" class="form-control" id="number" placeholder="Enter password" min="3" name="maxcount" max="6">
             </div>
           </div>
           <div class="form-group">
