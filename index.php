@@ -72,7 +72,7 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
 echo '<div>';
 if (isset($authUrl)){ 
 
-	//show login url
+	include("headerl.php");
 	echo '<div align="center">';
 	echo '<h3>Login with Gmail to continue</h3>';
 	echo '<div>Please click login button to connect to Google.</div>';

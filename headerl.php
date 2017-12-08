@@ -39,7 +39,7 @@
               <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-            <?php $redirect_uri = "http://localhost:5000"; echo "<a class='nav-link' href='".$redirect_uri."?logout'>Log Out</a>" ?>
+            <a class='nav-link' href='/'>Log In</a>
             </li>
             </li>
           </ul>
