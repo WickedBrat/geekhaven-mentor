@@ -1,5 +1,6 @@
-<?php
-
+<?php/*
+  if (isset($_SESSION['access_token'])) {  
+    
 $userid = $_SESSION['userid'];
 
 $connect = mysqli_connect("us-cdbr-iron-east-05.cleardb.net", "b061db06849ed7", "e5239436", "heroku_fbd4d972ab0bf1a");
@@ -48,5 +49,15 @@ $c = mysqli_fetch_array($a);
 
 include("footerm.php");
 
+} else {
+    include("headerl.php");
+    echo '<div align="center">';
+    echo '<h3>Login with Gmail to continue</h3>';
+    echo '<div>Please click login button to connect to Google.</div>';
+    echo '<a class="login" href="' . $authUrl . '"><img src="https://developers.google.com/+/images/branding/sign-in-buttons/Red-signin_Google_base_44dp.png" /></a>';
+    echo '</div>';
+    include("footerm.php");
+  }
 
+  */
 ?>
