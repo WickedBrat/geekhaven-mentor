@@ -1,4 +1,4 @@
-<?php/*
+<?php
   if (isset($_SESSION['access_token'])) {  
     
 $userid = $_SESSION['userid'];
@@ -59,5 +59,4 @@ include("footerm.php");
     include("footerm.php");
   }
 
-  */
 ?>
