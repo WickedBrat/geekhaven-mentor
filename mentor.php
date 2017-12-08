@@ -72,7 +72,7 @@
     $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors` WHERE google_id=$user->id");
 
     $data = mysqli_fetch_array($ret);
-    echo "<center>Your current mentoree count is ".$data['max_count'].".</center>";
+    echo "<center>Your current mentee count is ".$data['max_count'].".</center>";
 
 ?>
 

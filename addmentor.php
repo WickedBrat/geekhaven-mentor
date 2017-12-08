@@ -13,7 +13,7 @@
 
     include("header.php");
     if ($ret) {
-        echo "<center>Congratulations! Mentoree count updated</center>";
+        echo "<center>Congratulations! mentee count updated</center>";
         
     } else {
         echo "<center>Oops! Try again</center>";
