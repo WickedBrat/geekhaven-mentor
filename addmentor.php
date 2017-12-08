@@ -11,7 +11,7 @@ session_start();
 
     $connect = mysqli_connect("us-cdbr-iron-east-05.cleardb.net", "b061db06849ed7", "e5239436", "heroku_fbd4d972ab0bf1a");
 
-    if ($maxcount>3 && $maxcount<6) {
+    if ($maxcount>=3 && $maxcount<=6) {
         $ret = mysqli_query($connect, "UPDATE `google_users_mentors` SET `max_count`=$maxcount WHERE google_id=$userid");
         
             include("header.php");
