@@ -92,12 +92,17 @@ if (isset($authUrl)){
     }
 	
 	//check if user exist in database using COUNT
-  $mysqli->query("CREATE TABLE IF NOT EXISTS `google_users_mentors` (`google_id` decimal(21,0) NOT NULL, `google_name` varchar(60) NOT NULL, `google_email` varchar(60) NOT NULL, `google_link` varchar(60) NOT NULL, `google_picture_link` varchar(60) NOT NULL, `max_count` int(11) NOT NULL DEFAULT '3', PRIMARY KEY (`google_id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1");
-  $result = $mysqli->query("SELECT COUNT(google_id) as usercount FROM google_users_mentors WHERE google_id=$user->id");
+  $result = $mysqli->query("SELECT * FROM google_users_mentors WHERE google_id=$user->id");
   //$result = $mysqli->query("SELECT COUNT(google_id) as usercount FROM google_users WHERE google_id=$user->id");
-	$user_count = $result->fetch_all()->usercount; //will return 0 if user doesn't exist
-  
-  $mysqli->query("CREATE TABLE IF NOT EXISTS `google_users_mentors` (`google_id` decimal(21,0) NOT NULL, `google_name` varchar(60) NOT NULL, `google_email` varchar(60) NOT NULL, `google_link` varchar(60) NOT NULL, `google_picture_link` varchar(60) NOT NULL, `max_count` int(11) NOT NULL DEFAULT '3', PRIMARY KEY (`google_id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1");
+	//$user_count = $result->fetch_all()->usercount; //will return 0 if user doesn't exist
+
+  $data = mysqli_fetch_array($result);
+
+  if($data['google_id'])
+    $user_count=1;
+  else
+    $user_count=0;
+
   $_SESSION['userid']=$user->id;
   
 	
