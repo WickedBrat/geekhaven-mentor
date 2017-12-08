@@ -77,7 +77,8 @@ if (isset($authUrl)){
 	echo '<h3>Login with Gmail to continue</h3>';
 	echo '<div>Please click login button to connect to Google.</div>';
 	echo '<a class="login" href="' . $authUrl . '"><img src="https://developers.google.com/+/images/branding/sign-in-buttons/Red-signin_Google_base_44dp.png" /></a>';
-	echo '</div>';
+  echo '</div>';
+  include("footerm.php");
 	
 } else {
 	
