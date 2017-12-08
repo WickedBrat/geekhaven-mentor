@@ -44,7 +44,7 @@
               <a class="nav-link" href="mentor.php">Home</a>
             </li>
             <li class="nav-item">
-            <?php echo "<a class='nav-link' href='".$redirect_uri."?logout'>Log Out</a>" ?>
+            <?php $redirect_uri="https://mentor-portal.herokuapp.com"; echo "<a class='nav-link' href='".$redirect_uri."?logout'>Log Out</a>" ?>
             </li>
             </li>
           </ul>
