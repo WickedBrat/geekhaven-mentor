@@ -62,7 +62,7 @@
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="page-heading">
               <h1>Geekhaven Mentor</h1>
-              <span class="subheading">Fill the form below and select the number of mentorees.</span>
+              <span class="subheading">Fill the form below and select the number of mentees.</span>
             </div>
           </div>
         </div>
@@ -98,7 +98,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-sm-2" for="number">Number of mentorees:</label>
+            <label class="control-label col-sm-2" for="number">Number of mentees:</label>
             <div class="col-sm-10">
               <input type="number" class="form-control" id="number" placeholder="Enter password" min="3" name="maxcount">
             </div>
@@ -163,5 +163,6 @@
     } else {
       include("headerl.php");
       echo "<center>Please login to continue.</center>";
+      include("footerm.php");
     }
 ?>
