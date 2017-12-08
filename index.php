@@ -113,10 +113,10 @@ if (isset($authUrl)){
     }
 	else
 	{ 
-    $statement = $mysqli->prepare("INSERT INTO google_users_mentors (google_id, google_name, google_email, google_link, google_picture_link) VALUES (?,?,?,?,?)");
+    $statement = $mysqli->query("INSERT INTO google_users_mentors (google_id, google_name, google_email, google_link, google_picture_link) VALUES ($user->id,'$user->name','$user->email','$user->link','$user->picture')");
     //$statement = $mysqli->prepare("INSERT INTO google_users (google_id, google_name, google_email, google_link, google_picture_link) VALUES (?,?,?,?,?)");
-		$statement->bind_param('issss', $user->id,  $user->name, $user->email, $user->link, $user->picture);
-    $statement->execute();
+		//$statement->bind_param('issss', $user->id,  $user->name, $user->email, $user->link, $user->picture);
+    //$statement->execute();
     //include("selectmentor.php");
     include("mentor.php");
 
