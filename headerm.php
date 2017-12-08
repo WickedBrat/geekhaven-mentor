@@ -44,7 +44,7 @@
               <a class="nav-link" href="mentor.php">Home</a>
             </li>
             <li class="nav-item">
-            <?php $redirect_uri = "http://localhost:5000"; echo "<a class='nav-link' href='".$redirect_uri."?logout'>Log Out</a>" ?>
+            <?php echo "<a class='nav-link' href='".$redirect_uri."?logout'>Log Out</a>" ?>
             </li>
             </li>
           </ul>
