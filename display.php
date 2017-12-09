@@ -42,7 +42,7 @@ echo "Check your email now....<br/>";
 error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
 
 set_include_path("." . PATH_SEPARATOR . ($UserDir = dirname($_SERVER['DOCUMENT_ROOT'])) . "/pear/php" . PATH_SEPARATOR . get_include_path());
-require_once "Mail.php";
+require_once ".heroku/php/lib/php/Mail.php";
 
 $host = "ssl://smtp.gmail.com";
 $username = "harshsrivastav@gmail.com";
