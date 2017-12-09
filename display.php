@@ -25,7 +25,7 @@ if (mail($to, $subject, $message,$headers)) {
 } else {
     echo "Failed";
 }
-*/
+
 ini_set("SMTP", "aspmx.l.google.com");
 ini_set("sendmail_from", "harshsrivastav123@gmail.com");
 
@@ -36,6 +36,36 @@ $headers = "From: harshsrivastav123@gmail.com";
 
 mail("harshsrivastav123@gmail.com", "Testing", $message, $headers);
 echo "Check your email now....<br/>";
+*/
 
+
+<?php
+
+error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
+
+set_include_path("." . PATH_SEPARATOR . ($UserDir = dirname($_SERVER['DOCUMENT_ROOT'])) . "/pear/php" . PATH_SEPARATOR . get_include_path());
+require_once "Mail.php";
+
+$host = "ssl://smtp.gmail.com";
+$username = "harshsrivastav@gmail.com";
+$password = "yesyouarethebest";
+$port = "465";
+$to = "iec2016076@iiita.ac.in";
+$email_from = "harshsrivastav@gmail.com";
+$email_subject = "Subject Line Here: " ;
+$email_body = "whatever you like" ;
+$email_address = "iec2016076@iiita.ac.in";
+
+$headers = array ('From' => $email_from, 'To' => $to, 'Subject' => $email_subject, 'Reply-To' => $email_address);
+$smtp = Mail::factory('smtp', array ('host' => $host, 'port' => $port, 'auth' => true, 'username' => $username, 'password' => $password));
+$mail = $smtp->send($to, $headers, $email_body);
+
+
+if (PEAR::isError($mail)) {
+echo("<p>" . $mail->getMessage() . "</p>");
+} else {
+echo("<p>Message successfully sent!</p>");
+}
+?>
 
 ?>
