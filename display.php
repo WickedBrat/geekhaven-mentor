@@ -16,7 +16,7 @@ while ($data = mysqli_fetch_array($ret)) {
 $to="iec2016076@iiita.ac.in";
 $subject="Mentor Portal";
 $message="This is test";
-$headers = "From: harshsrivastav123@gmail.com \r\n";
+$headers = "From: harshsrivastav123@gmail.com \n";
 $headers .= "MIME-Version:1.0 \n";
 $headers .= "Content-type: text/html; charset=iso-8859-1 \n";
 mail($to, $subject, $message,$headers);
