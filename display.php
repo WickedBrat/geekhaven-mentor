@@ -12,6 +12,10 @@ while ($data = mysqli_fetch_array($ret)) {
     echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
 }
 
+require 'vendor/autoload.php';
+use Mailgun\Mailgun;
+$mailgun = new Mailgun('api_key', new \Http\Adapter\Guzzle6\Client());
+
 require 'PHPMailerAutoload.php';
 
 $mail = new PHPMailer;
