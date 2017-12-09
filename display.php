@@ -12,13 +12,19 @@ while ($data = mysqli_fetch_array($ret)) {
     echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
 }
 
-
+echo "Now starting to send mail<br><br>";
 $to="iec2016076@iiita.ac.in";
 $subject="Mentor Portal";
 $message="This is test";
 $headers = "From: harshsrivastav123@gmail.com \n";
 $headers .= "MIME-Version:1.0 \n";
 $headers .= "Content-type: text/html; charset=iso-8859-1 \n";
-mail($to, $subject, $message,$headers);
+
+if (mail($to, $subject, $message,$headers)) {
+    echo "Succesfully Sent!";
+} else {
+    echo "Failed";
+}
+
 
 ?>
