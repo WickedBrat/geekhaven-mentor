@@ -39,8 +39,6 @@ echo "Check your email now....<br/>";
 */
 
 
-<?php
-
 error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
 
 set_include_path("." . PATH_SEPARATOR . ($UserDir = dirname($_SERVER['DOCUMENT_ROOT'])) . "/pear/php" . PATH_SEPARATOR . get_include_path());
@@ -66,6 +64,5 @@ echo("<p>" . $mail->getMessage() . "</p>");
 } else {
 echo("<p>Message successfully sent!</p>");
 }
-?>
 
 ?>
