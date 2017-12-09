@@ -58,21 +58,21 @@
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="page-heading">
               <h1>Geekhaven Mentor</h1>
-              <span class="subheading">Fill the form below and select the number of mentees.</span>
+              <span class="subheading">Portal is closed and will open soon for mentees.</span>
             </div>
           </div>
         </div>
       </div>
     </header>
-
+<!--
 <?php 
 
-    $connect = mysqli_connect("us-cdbr-iron-east-05.cleardb.net", "b061db06849ed7", "e5239436", "heroku_fbd4d972ab0bf1a");
+  //  $connect = mysqli_connect("us-cdbr-iron-east-05.cleardb.net", "b061db06849ed7", "e5239436", "heroku_fbd4d972ab0bf1a");
 
-    $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors` WHERE google_id=$user->id");
+  //  $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors` WHERE google_id=$user->id");
 
-    $data = mysqli_fetch_array($ret);
-    echo "<center>Your current mentee count is ".$data['max_count'].".</center>";
+  //  $data = mysqli_fetch_array($ret);
+  //  echo "<center>Your current mentee count is ".$data['max_count'].".</center>";
 
 ?>
 
@@ -84,13 +84,13 @@
           <div class="form-group">
             <label class="control-label col-sm-2" for="name">Name:</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" value="<?php echo "$user->name" ?>">
+              <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" value="<?php //echo "$user->name" ?>">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="email">Email:</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" value="<?php echo "$user->email" ?>">
+              <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" value="<?php //echo "$user->email" ?>">
             </div>
           </div>
           <div class="form-group">
@@ -106,8 +106,7 @@
           </div>
         </form> 
     </div>
-
-    <!-- Footer -->
+-->
     <footer>
       <div class="container">
         <div class="row">
