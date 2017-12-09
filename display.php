@@ -12,11 +12,14 @@ while ($data = mysqli_fetch_array($ret)) {
     echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
 }
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+//Load composer's autoloader
 require 'autoload.php';
-use Mailgun\Mailgun;
-$mailgun = new Mailgun('key-f10958c006491d77a5a2cac4088c9cdd', new \Http\Adapter\Guzzle6\Client());
 
-
+$mailgun = new PHPMailer(true);                              // Passing `true` enables exceptions
+try {
 $mailgun->isSMTP();                                      // Set mailer to use SMTP
 $mailgun->Host = 'smtp.mailgun.org';                     // Specify main and backup SMTP servers
 $mailgun->SMTPAuth = true;                               // Enable SMTP authentication
