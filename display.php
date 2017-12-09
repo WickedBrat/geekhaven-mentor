@@ -11,7 +11,7 @@ while ($data = mysqli_fetch_array($ret)) {
  
     echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
 }
-
+/*
 
 //Load composer's autoloader
 require 'phpmailer/PHPMailerAutoload.php';
@@ -46,6 +46,26 @@ if(!$mail->send()) {
     echo 'Message could not be sent.';
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 }
+*/
 
+require 'vendor/autoload.php';
+use Mailgun\Mailgun;
 
+$mgClient = new Mailgun('key-f10958c006491d77a5a2cac4088c9cdd');
+$domain = "sandboxb083e1bab15b43d0bb728852ca071822.mailgun.org";
+
+$result = $mgClient->sendMessage($domain, array(
+    'from'    => 'Excited User mailgun@sandboxb083e1bab15b43d0bb728852ca071822.mailgun.org',
+    'to'      => 'Baz harshsrivastav123@gmail.com@gmail.com',
+    'subject' => 'Hello',
+    'text'    => 'Testing some Mailgun awesomness!'
+));
+/*
+SMTP Hostname
+smtp.mailgun.org
+Default SMTP Login
+postmaster@sandboxb083e1bab15b43d0bb728852ca071822.mailgun.org
+API Base URL
+https://api.mailgun.net/v3/sandboxb083e1bab15b43d0bb728852ca071822.mailgun.org
+*/
 ?>
