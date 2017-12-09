@@ -74,8 +74,8 @@ $c = mysqli_fetch_array($a);
             echo "</label>";
         }
         
-       /* echo "<button type='submit' name='submit' class='btn btn-default'>Submit</button>";
-        echo "</form>";*/
+       echo "<button type='submit' name='submit' class='btn btn-default'>Submit</button>";
+        echo "</form>";
     
     } else {
         echo "You've selected your mentor! Contact him!";
