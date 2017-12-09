@@ -42,5 +42,6 @@ if(!$mailgun->send()) {
 } else {
     echo 'Message has been sent';
 }
+}
 
 ?>
