@@ -54,12 +54,17 @@ use Mailgun\Mailgun;
 $mgClient = new Mailgun('key-f10958c006491d77a5a2cac4088c9cdd');
 $domain = "sandboxb083e1bab15b43d0bb728852ca071822.mailgun.org";
 
-$result = $mgClient->sendMessage($domain, array(
+if ($result = $mgClient->sendMessage($domain, array(
     'from'    => 'Excited User mailgun@sandboxb083e1bab15b43d0bb728852ca071822.mailgun.org',
     'to'      => 'Baz harshsrivastav123@gmail.com@gmail.com',
     'subject' => 'Hello',
     'text'    => 'Testing some Mailgun awesomness!'
-));
+))) {
+    echo "Success";
+} else {
+    echo "Failed";
+}
+
 /*
 SMTP Hostname
 smtp.mailgun.org
