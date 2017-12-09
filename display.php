@@ -25,18 +25,20 @@ if (mail($to, $subject, $message,$headers)) {
 } else {
     echo "Failed";
 }
-
-ini_set("SMTP", "aspmx.l.google.com");
+*/
+ini_set("SMTP", "smtp.mailgun.org");
 ini_set("sendmail_from", "harshsrivastav123@gmail.com");
 
-$message = "The mail message was sent with the following mail setting:\r\nSMTP = aspmx.l.google.com\r\nsmtp_port = 25\r\nsendmail_from = YourMail@address.com";
+$message = "The mail message was sent with the following mail setting:\r\nSMTP = smtp.mailgun.org\r\nsmtp_port = 25\r\nsendmail_from = YourMail@address.com";
 
 $headers = "From: harshsrivastav123@gmail.com";
 
 
 mail("harshsrivastav123@gmail.com", "Testing", $message, $headers);
 echo "Check your email now....<br/>";
-*/
+
+
+/*
 
 
 error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
@@ -64,5 +66,5 @@ echo("<p>" . $mail->getMessage() . "</p>");
 } else {
 echo("<p>Message successfully sent!</p>");
 }
-
+*/
 ?>
