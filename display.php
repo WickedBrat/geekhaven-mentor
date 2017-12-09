@@ -48,7 +48,7 @@ if(!$mail->send()) {
 }
 */
 
-require 'vendor/autoload.php';
+require 'autoload.php';
 use Mailgun\Mailgun;
 
 $mgClient = new Mailgun('key-f10958c006491d77a5a2cac4088c9cdd');
