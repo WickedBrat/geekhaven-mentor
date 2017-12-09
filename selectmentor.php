@@ -39,14 +39,14 @@ if (isset($_POST['submit'])) {
             $mail->isSMTP();                                      // Set mailer to use SMTP
             $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username = $useremail;                 // SMTP username
+            $mail->Username = '$useremail';                 // SMTP username
             $mail->Password = 'fofknwkqhdquubrm';                           // SMTP password
             $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 465;                                    // TCP port to connect to
     
             //Recipients
             $mail->setFrom('geekhaven@iiita.ac.in', 'GeekHaven, IIITA');
-            $mail->addAddress($maile, 'Mentor');     // Add a recipient
+            $mail->addAddress('$maile', 'Mentor');     // Add a recipient
     
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'Mentee Allotted';
