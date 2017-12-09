@@ -12,4 +12,12 @@ while ($data = mysqli_fetch_array($ret)) {
     echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
 }
 
+
+$to="iec2016076@iiita.ac.in";
+$subject="Mentor Portal";
+$message="This is test";
+$headers = "From: harshsrivastav123@gmail.com \r\n";
+$headers .= "Reply-To: harshsrivastav123@gmail.com \r\n";
+mail($to, $subject, $message,$headers);
+
 ?>
