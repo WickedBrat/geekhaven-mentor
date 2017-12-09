@@ -16,7 +16,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 //Load composer's autoloader
-require 'autoload.php';
+require 'phpmailer/PHPMailerAutoload.php';
 
 $mailgun = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
