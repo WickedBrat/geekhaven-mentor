@@ -28,7 +28,7 @@ $mail->Port       = 465;
 $mail->From = 'postmaster@mentor-portal.herokuapp.com';
 $mail->FromName = 'Mailer';
 $mail->addAddress('iec2016076@iiita.ac.in');                 // Add a recipient
-$mail->Timeout = 60;
+
 $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
 
 $mail->Subject = 'Hello';
