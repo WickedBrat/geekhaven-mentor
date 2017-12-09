@@ -16,29 +16,26 @@ require 'autoload.php';
 use Mailgun\Mailgun;
 $mailgun = new Mailgun('key-f10958c006491d77a5a2cac4088c9cdd', new \Http\Adapter\Guzzle6\Client());
 
-require 'PHPMailerAutoload.php';
 
-$mail = new PHPMailer;
+$mailgun->isSMTP();                                      // Set mailer to use SMTP
+$mailgun->Host = 'smtp.mailgun.org';                     // Specify main and backup SMTP servers
+$mailgun->SMTPAuth = true;                               // Enable SMTP authentication
+$mailgun->Username = 'postmaster@mentor-portal.herokuapp.com';   // SMTP username
+$mailgun->Password = '18a547fe72108889db8bbd4548839ba5';                           // SMTP password
+$mailgun->SMTPSecure = 'tls';                            // Enable encryption, only 'tls' is accepted
 
-$mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.mailgun.org';                     // Specify main and backup SMTP servers
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'postmaster@mentor-portal.herokuapp.com';   // SMTP username
-$mail->Password = '18a547fe72108889db8bbd4548839ba5';                           // SMTP password
-$mail->SMTPSecure = 'tls';                            // Enable encryption, only 'tls' is accepted
+$mailgun->From = 'harshsrivastav123@gmail.com';
+$mailgun->FromName = 'Mailer';
+$mailgun->addAddress('iec2016076@iiita.ac.in');                 // Add a recipient
 
-$mail->From = 'harshsrivastav123@gmail.com';
-$mail->FromName = 'Mailer';
-$mail->addAddress('iec2016076@iiita.ac.in');                 // Add a recipient
+$mailgun->WordWrap = 50;                                 // Set word wrap to 50 characters
 
-$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+$mailgun->Subject = 'Hello';
+$mailgun->Body    = 'Testing some Mailgun awesomness';
 
-$mail->Subject = 'Hello';
-$mail->Body    = 'Testing some Mailgun awesomness';
-
-if(!$mail->send()) {
+if(!$mailgun->send()) {
     echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
+    echo 'Mailer Error: ' . $mailgun->ErrorInfo;
 } else {
     echo 'Message has been sent';
 }
