@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
     
             //Recipients
             $mail->setFrom('geekhaven@iiita.ac.in', 'GeekHaven, IIITA');
-            $mail->addAddress($maile, 'Mentor');     // Add a recipient
+            $mail->addAddress('$maile', 'Mentor');     // Add a recipient
     
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'Mentee Allotted';
