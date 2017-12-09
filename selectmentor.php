@@ -1,6 +1,10 @@
 <?php 
     
+    $maile=$_POST['optradio'];
+
 $userid = $_SESSION['userid'];
+$useremail = $_SESSION['useremail'];
+$usenam = $_SESSION['username'];
 
 $connect = mysqli_connect("us-cdbr-iron-east-05.cleardb.net", "b061db06849ed7", "e5239436", "heroku_fbd4d972ab0bf1a");
 
@@ -11,16 +15,50 @@ $retu = mysqli_query($connect, "SELECT * FROM `google_users`");
 include("headerm.php");
 
 
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+    require 'vendor/autoload.php';
+
+    $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+
+
+    
+
 if (isset($_POST['submit'])) {
     if(isset($_POST['optradio']))
     {
-        $mail=$_POST['optradio'];
-        $d = $connect->query("SELECT max_count FROM `google_users_mentors` WHERE google_email='$mail'");
+        
+        $d = $connect->query("SELECT max_count FROM `google_users_mentors` WHERE google_email='$maile'");
         $maxc = mysqli_fetch_array($d);
         $maxc['max_count'] = $maxc['max_count'] - 1;
         $max = $maxc['max_count'];
+        try {
+            $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+            $mail->isSMTP();                                      // Set mailer to use SMTP
+            $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+            $mail->SMTPAuth = true;                               // Enable SMTP authentication
+            $mail->Username = '';                 // SMTP username
+            $mail->Password = 'fofknwkqhdquubrm';                           // SMTP password
+            $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = 465;                                    // TCP port to connect to
+    
+            //Recipients
+            $mail->setFrom('geekhaven@iiita.ac.in', 'GeekHaven, IIITA');
+            $mail->addAddress($maile, 'Mentor');     // Add a recipient
+    
+            $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->Subject = 'Mentee Allotted';
+            $mail->Body    = 'Greetings! Alloted mentee to you. His email is '.$useremail.' and his name is'.$usernam;
+    
+            $mail->send();
+            echo "mail sent";
+        } catch (Exception $e) {
+            echo "error";
+        }
         echo "You have selected: ".$_POST['optradio'].". He has been sent a mail but Go ahead contact him!<br>";
-        $connect->query("UPDATE google_users_mentors SET max_count=$max WHERE google_email='$mail'");
+        $connect->query("UPDATE google_users_mentors SET max_count=$max WHERE google_email='$maile'");
         $connect->query("UPDATE google_users SET selected=1 WHERE google_id=$userid");
     }
 }
