@@ -11,7 +11,7 @@ while ($data = mysqli_fetch_array($ret)) {
  
     echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
 }
-
+/*
 echo "Now starting to send mail<br><br>";
 $to="iec2016076@iiita.ac.in";
 $subject="Mentor Portal";
@@ -25,6 +25,17 @@ if (mail($to, $subject, $message,$headers)) {
 } else {
     echo "Failed";
 }
+*/
+ini_set("SMTP", "aspmx.l.google.com");
+ini_set("sendmail_from", "harshsrivastav123@gmail.com");
+
+$message = "The mail message was sent with the following mail setting:\r\nSMTP = aspmx.l.google.com\r\nsmtp_port = 25\r\nsendmail_from = YourMail@address.com";
+
+$headers = "From: harshsrivastav123@gmail.com";
+
+
+mail("harshsrivastav123@gmail.com", "Testing", $message, $headers);
+echo "Check your email now....<br/>";
 
 
 ?>
