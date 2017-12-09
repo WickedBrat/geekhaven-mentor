@@ -12,7 +12,7 @@ while ($data = mysqli_fetch_array($ret)) {
     echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
 }
 
-require 'libraries/autoload.php';
+//require 'libraries/autoload.php';
 use Mailgun\Mailgun;
 $mailgun = new Mailgun('key-f10958c006491d77a5a2cac4088c9cdd', new \Http\Adapter\Guzzle6\Client());
 
