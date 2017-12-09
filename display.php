@@ -12,8 +12,6 @@ while ($data = mysqli_fetch_array($ret)) {
     echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
 }
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
 //Load composer's autoloader
 require 'phpmailer/PHPMailerAutoload.php';
