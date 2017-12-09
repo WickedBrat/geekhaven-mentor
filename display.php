@@ -19,7 +19,7 @@ require 'phpmailer/PHPMailerAutoload.php';
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
 $mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.mail.org';                     // Specify main and backup SMTP servers
+$mail->Host = 'smtp.mailgun.org';                     // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
 $mail->Username = 'postmaster@mentor-portal.herokuapp.com';   // SMTP username
 $mail->Password = '18a547fe72108889db8bbd4548839ba5';                           // SMTP password
