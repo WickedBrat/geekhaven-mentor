@@ -25,7 +25,7 @@ $mail->Username = 'postmaster@mentor-portal.herokuapp.com';   // SMTP username
 $mail->Password = '18a547fe72108889db8bbd4548839ba5';                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable encryption, only 'tls' is accepted
 $mail->Port       = 587;  
-$mail->From = 'harshsrivastav123@gmail.com';
+$mail->From = 'postmaster@mentor-portal.herokuapp.com';
 $mail->FromName = 'Mailer';
 $mail->addAddress('iec2016076@iiita.ac.in');                 // Add a recipient
 
