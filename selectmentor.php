@@ -54,9 +54,9 @@ if (isset($_POST['submit'])) {
             $mail->Body    = 'Greetings! Alloted mentee to you. His email is '.$useremail.' and his name is'.$usernam;
     
             $mail->send();
-            echo "mail sent";
+           // echo "mail sent";
         } catch (Exception $e) {
-            echo "error";
+            echo "There is some error!<br>";
         }
         echo "You have selected: ".$_POST['optradio'].". He has been sent a mail but Go ahead contact him!<br>";
         $connect->query("UPDATE google_users_mentors SET max_count=$max WHERE google_email='$maile'");
