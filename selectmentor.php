@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
         $maxc['max_count'] = $maxc['max_count'] - 1;
         $max = $maxc['max_count'];
         try {
-            $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+            //$mail->SMTPDebug = 2;                                 // Enable verbose debug output
             $mail->isSMTP();                                      // Set mailer to use SMTP
             $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
