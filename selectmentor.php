@@ -69,7 +69,7 @@ if (isset($_SESSION['access_token'])) {
                 if ($c['selected'] == 0) {
                         echo "<div class='container'>";
                         echo "<center>Oh C'mon! I'm getting boared. Don't you know Children must be taught how to think, not what to think.</center>";
-                        echo "<center><div class='col-lg-5 col-md-5 col-sm-5 text-center'><form><input type='text' name='answer' placeholder='Enter the answer.'><button type='submit' class='btn btn-primary' onclick='check(this.form)'>Submit</button></form></div></center>";
+                        echo "<center><div class='col-lg-5 col-md-5 col-sm-5 text-center'><form><input type='text' name='answer' placeholder='Enter the answer.'><button class='btn btn-primary' onclick='check(this.form)'>Submit</button></form></div></center>";
                         echo "Remember use no spaces or capital letters if you want to go further</div>";
                         echo "<div class='container' style='display:none;' id='p2'>";
                         echo "<form action='' method='POST' class='form'>";
