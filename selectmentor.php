@@ -40,6 +40,9 @@ if (isset($_SESSION['access_token'])) {
                     $maxc = mysqli_fetch_array($d);
                     $maxc['max_count'] = $maxc['max_count'] - 1;
                     $max = $maxc['max_count'];
+                    if ($max) {
+                        $connect->query("UPDATE `google_users_mentors` SET full=1 WHERE google_email=$maile ");
+                    }                     
                     try {
                         //$mail->SMTPDebug = 2;                                 // Enable verbose debug output
                         $mail->isSMTP();                                      // Set mailer to use SMTP
