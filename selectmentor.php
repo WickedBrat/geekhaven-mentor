@@ -19,6 +19,11 @@ if (isset($_SESSION['access_token'])) {
             $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors` WHERE `max_count`>0 ");
             $retu = mysqli_query($connect, "SELECT * FROM `google_users`");
     
+            $k = $connect->query("SELECT full FROM `google_users_mentors` WHERE google_email='$maile'");
+            $po = mysqli_fetch_array($k);
+            $f = $po['full'];
+
+
             include("headerm.php");
     
     
@@ -26,6 +31,8 @@ if (isset($_SESSION['access_token'])) {
             $mail = new PHPMailer(true);                              // Passing `true` enables exceptions    
     
             if (isset($_POST['submit'])) {
+                if ($f > 0) {
+                    
                 if(isset($_POST['optradio']))
                 {
                     $connect->query("UPDATE `google_users` SET mentor_name='$maile' WHERE google_id=$userid ");
@@ -61,6 +68,10 @@ if (isset($_SESSION['access_token'])) {
                     $connect->query("UPDATE google_users_mentors SET max_count=$max WHERE google_email='$maile'");
                     $connect->query("UPDATE google_users SET selected=1 WHERE google_id=$userid");
                 }
+                } else {
+                    echo "Unfortunately the mentor was selected by someone else";
+                }
+                
             }
     
             $a = $connect->query("SELECT * FROM google_users WHERE google_id=$userid");
