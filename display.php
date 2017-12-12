@@ -4,11 +4,30 @@ $connect = mysqli_connect("us-cdbr-iron-east-05.cleardb.net", "b061db06849ed7", 
 
 $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors`");
 
-while ($data = mysqli_fetch_array($ret)) {
- 
-    echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
-}
 
+?>
+
+<table>
+    <thead>
+        <tr>
+            <td>Mentor Name</td>
+            <td>Mentee Count</td>
+            <td>Mentor Email</td>
+        </tr>
+        <?php
+            while ($data = mysqli_fetch_array($ret)) {   
+                echo "<tr>";
+                    echo "<td>".$data['google_name']."</td>";
+                    echo "<td>".$data['max_count']."</td>";
+                    echo "<td>".$data['google_email']."</td>";
+                echo "</tr>";
+                //echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
+            }
+        ?>
+    </thead>
+</table>
+
+ <?php
 
 $connect->query("UPDATE `google_users` SET selected=0 WHERE google_name='Siddhant Srivastav' ");/*
 $connect->query("UPDATE `google_users_mentors` SET max_count=5 WHERE google_name='Siddhant Srivastav' ");
