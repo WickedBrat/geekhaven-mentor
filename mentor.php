@@ -78,7 +78,7 @@
 
 
 
-
+<!--
 <div class="container">
         <form class="form-horizontal" action="addmentor.php" method="POST">
           <div class="form-group">
@@ -106,7 +106,7 @@
           </div>
         </form> 
     </div>
-
+-->
     <footer>
       <div class="container">
         <div class="row">

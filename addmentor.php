@@ -117,7 +117,7 @@ session_start();
 */
 ?>
 
-
+<!--
 
 
 <div class="container">
@@ -147,7 +147,7 @@ session_start();
           </div>
         </form> 
     </div>
-
+-->
     <footer>
       <div class="container">
         <div class="row">
