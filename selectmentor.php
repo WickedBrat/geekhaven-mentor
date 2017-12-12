@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 if (isset($_SESSION['access_token'])) {
-    if (strpos($useremail,'2016') == true) {
+    if (strpos($useremail,'2016') == true || strpos($useremail,'2015') == true) {
         echo "<h1><center>No! You should not attempt to do this! I know you're a mentor. Go away!</center></h1>";
     } 
     else {
