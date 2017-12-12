@@ -67,5 +67,10 @@
       </div>
     </header>
 
-  <div class="container">
+          <div class="container">
+            <center>Wait Wait Wait</center>
+            <img src="notpass.jpg" alt="You Shall not pass">
+          </div>
+  <div class="container" style="display:none;">
     <form action="" method="POST" class="form">
+        
