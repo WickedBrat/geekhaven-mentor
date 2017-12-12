@@ -72,7 +72,7 @@ if (isset($_SESSION['access_token'])) {
                         echo "<label class='radio-inline'>";
                         echo "<input type='radio' name='optradio' value='".$data['google_email']."'>".$data['google_name'];
                         echo "</label>";
-                        echo "</div>"
+                        echo "</div>";
                     }
                     
                 echo "<button type='submit' name='submit' class='btn btn-default'>Submit</button>";
