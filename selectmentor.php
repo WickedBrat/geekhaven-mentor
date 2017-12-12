@@ -16,7 +16,7 @@ if (isset($_SESSION['access_token'])) {
             $maile=$_POST['optradio'];
             $connect = mysqli_connect("us-cdbr-iron-east-05.cleardb.net", "b061db06849ed7", "e5239436", "heroku_fbd4d972ab0bf1a");
     
-            $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors` WHERE `max_count`>=0 ");
+            $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors` WHERE `max_count`>0 ");
             $retu = mysqli_query($connect, "SELECT * FROM `google_users`");
     
             include("headerm.php");
@@ -55,9 +55,9 @@ if (isset($_SESSION['access_token'])) {
                         $mail->send();
                     // echo "mail sent";
                     } catch (Exception $e) {
-                        echo "There is some error!<br>";
+                        echo "<center>There is some error!<br></center>";
                     }
-                    echo "You have selected: ".$_POST['optradio'].". He has been sent a mail but Go ahead contact him!<br>";
+                    echo "<center>You have selected: ".$_POST['optradio'].". He has been sent a mail but Go ahead contact him!</center><br>";
                     $connect->query("UPDATE google_users_mentors SET max_count=$max WHERE google_email='$maile'");
                     $connect->query("UPDATE google_users SET selected=1 WHERE google_id=$userid");
                 }
@@ -68,7 +68,6 @@ if (isset($_SESSION['access_token'])) {
     
                 if ($c['selected'] == 0) {
                     while ($data = mysqli_fetch_array($ret)) {
-                        
                         echo "<label class='radio-inline'>";
                         echo "<input type='radio' name='optradio' value='".$data['google_email']."'>".$data['google_name'];
                         echo "</label>";
@@ -78,7 +77,7 @@ if (isset($_SESSION['access_token'])) {
                     echo "</form>";
                 
                 } else {
-                    echo "You've selected your mentor! Contact him!";
+                    echo "<center>You've selected your mentor! Contact him!</center>";
                 }
                 
             include("footerm.php");
