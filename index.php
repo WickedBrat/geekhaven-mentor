@@ -107,6 +107,7 @@ if (isset($authUrl)){
     $_SESSION['userid']=$user->id;
     $_SESSION['useremail']=$user->email;
     $_SESSION['username']=$user->name;
+    $_SESSION['authURL']=$authUrl;
   
 	
 	if($user_count)

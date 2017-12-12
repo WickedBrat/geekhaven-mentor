@@ -149,6 +149,7 @@
 </html>
 <?php
     } else {
+      $authUrl=$_SESSION['authURL'];
       include("headerl.php");
       echo '<div align="center">';
       echo '<h3>Login with Gmail to continue</h3>';

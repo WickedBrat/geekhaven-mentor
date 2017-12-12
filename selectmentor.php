@@ -14,17 +14,12 @@ $retu = mysqli_query($connect, "SELECT * FROM `google_users`");
 
 include("headerm.php");
 
-
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
     require 'vendor/autoload.php';
 
-    $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
-
-
-    
+    $mail = new PHPMailer(true);                              // Passing `true` enables exceptions    
 
 if (isset($_POST['submit'])) {
     if(isset($_POST['optradio']))
