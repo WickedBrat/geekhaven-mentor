@@ -28,7 +28,7 @@ if (isset($_SESSION['access_token'])) {
             if (isset($_POST['submit'])) {
                 if(isset($_POST['optradio']))
                 {
-                    
+                    $connect->query("UPDATE `google_users` SET mentor_name='$maile' WHERE 'google_id'=$userid ");
                     $d = $connect->query("SELECT max_count FROM `google_users_mentors` WHERE google_email='$maile'");
                     $maxc = mysqli_fetch_array($d);
                     $maxc['max_count'] = $maxc['max_count'] - 1;

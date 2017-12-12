@@ -8,8 +8,8 @@ while ($data = mysqli_fetch_array($ret)) {
  
     echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
 }
-
-$connect->query("ALTER TABLE `google_users` ADD COLUMN 'mentor_name'");/*
+/*
+$connect->query("ALTER TABLE `google_users` ADD COLUMN 'mentor_name'");
 $connect->query("INSERT INTO `google_users_mentors`(`google_id`, `google_name`, `google_email`) VALUES (106512,'Affan Ahmad Fahmi','IIT2015002@iiita.ac.in')");
 $connect->query("INSERT INTO `google_users_mentors`(`google_id`, `google_name`, `google_email`) VALUES (106513,'Satyarth Agrahari','IEC2015018@iiita.ac.in')");
 $connect->query("INSERT INTO `google_users_mentors`(`google_id`, `google_name`, `google_email`) VALUES (106514,'Saurabh Mishra','iit2015508@iiita.ac.in')");
