@@ -64,15 +64,15 @@
         </div>
       </div>
     </header>
-<!--
+
 <?php 
 
-  //  $connect = mysqli_connect("us-cdbr-iron-east-05.cleardb.net", "b061db06849ed7", "e5239436", "heroku_fbd4d972ab0bf1a");
+   $connect = mysqli_connect("us-cdbr-iron-east-05.cleardb.net", "b061db06849ed7", "e5239436", "heroku_fbd4d972ab0bf1a");
 
-  //  $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors` WHERE google_id=$user->id");
+  $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors` WHERE google_id=$user->id");
 
-  //  $data = mysqli_fetch_array($ret);
-  //  echo "<center>Your current mentee count is ".$data['max_count'].".</center>";
+  $data = mysqli_fetch_array($ret);
+  echo "<center>Your current mentee count is ".$data['max_count'].".</center>";
 
 ?>
 
@@ -106,7 +106,7 @@
           </div>
         </form> 
     </div>
--->
+
     <footer>
       <div class="container">
         <div class="row">

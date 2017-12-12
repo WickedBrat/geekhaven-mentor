@@ -1,5 +1,5 @@
 <?php
-/*session_start();
+session_start();
   if (isset($_SESSION['access_token'])) {  
     
     session_start();
@@ -15,9 +15,9 @@
         $ret = mysqli_query($connect, "UPDATE `google_users_mentors` SET `max_count`=$maxcount WHERE google_id=$userid");
         
             include("header.php");
-            if ($ret) {*/
+            if ($ret) {
                 echo "<center>Portal Closed for now</center>";
-                /*
+                
             } else {
                 echo "<center>Oops! Try again</center>";
             }
@@ -37,5 +37,5 @@
     echo '<a class="login" href="' . $authUrl . '"><img src="https://developers.google.com/+/images/branding/sign-in-buttons/Red-signin_Google_base_44dp.png" /></a>';
     echo '</div>';
     include("footerm.php");
-  }*/
+  }
 ?>
