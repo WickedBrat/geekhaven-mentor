@@ -11,7 +11,7 @@ while ($data = mysqli_fetch_array($ret)) {
 
 
 $connect->query("UPDATE `google_users` SET selected=0 WHERE google_name='Siddhant Srivastav' ");
-$connect->query("UPDATE `google_users_mentors` SET `max_count`=5 WHERE google_id=$userid");/*
+$connect->query("UPDATE `google_users_mentors` SET max_count=5 WHERE google_name='Siddhant Srivastav' ");/*
 $connect->query("ALTER TABLE `google_users` DROP COLUMN mentor_name");
 $connect->query("ALTER TABLE `google_users` ADD COLUMN mentor_name varchar(60)");
 $connect->query("INSERT INTO `google_users_mentors`(`google_id`, `google_name`, `google_email`) VALUES (106512,'Affan Ahmad Fahmi','IIT2015002@iiita.ac.in')");
