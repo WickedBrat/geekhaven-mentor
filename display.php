@@ -32,8 +32,8 @@ $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors`");
 $connect->query("UPDATE `google_users` SET selected=0 WHERE google_name='Siddhant Srivastav' ");/*
 $connect->query("UPDATE `google_users_mentors` SET max_count=5 WHERE google_name='Siddhant Srivastav' ");
 $connect->query("ALTER TABLE `google_users` DROP COLUMN mentor_name");
-$connect->query("ALTER TABLE `google_users` ADD COLUMN mentor_name varchar(60)");
-$connect->query("INSERT INTO `google_users_mentors`(`google_id`, `google_name`, `google_email`) VALUES (106512,'Affan Ahmad Fahmi','IIT2015002@iiita.ac.in')");
+$connect->query("ALTER TABLE `google_users` ADD COLUMN mentor_name varchar(60)");*/
+$connect->query("INSERT INTO `google_users_mentors`(`google_id`, `google_name`, `google_email`) VALUES (106572,'Vinit Roy','iec2016077@iiita.ac.in')");/*
 $connect->query("INSERT INTO `google_users_mentors`(`google_id`, `google_name`, `google_email`) VALUES (106513,'Satyarth Agrahari','IEC2015018@iiita.ac.in')");
 $connect->query("INSERT INTO `google_users_mentors`(`google_id`, `google_name`, `google_email`) VALUES (106514,'Saurabh Mishra','iit2015508@iiita.ac.in')");
 $connect->query("INSERT INTO `google_users_mentors`(`google_id`, `google_name`, `google_email`) VALUES (106515,'Aseem Shrey','rit2015044@iiita.ac.in')");
