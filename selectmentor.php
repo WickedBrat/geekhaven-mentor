@@ -31,7 +31,7 @@ if (isset($_SESSION['access_token'])) {
             $mail = new PHPMailer(true);                              // Passing `true` enables exceptions    
     
             if (isset($_POST['submit'])) {
-                if ($f > 0) {
+                if ($f == 0) {
                     
                 if(isset($_POST['optradio']))
                 {

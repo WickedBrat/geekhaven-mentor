@@ -30,11 +30,11 @@ $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors`");
 </table>
 
  <?php
-/*
-$connect->query("UPDATE `google_users_mentors` SET google_name='Ravi Charan' WHERE google_name='Venkata Nudurapati' ");
+
+$connect->query("UPDATE `google_users_mentors` SET full=1 WHERE max_count<=0 ");/*
 $connect->query("UPDATE `google_users_mentors` SET max_count=5 WHERE google_name='Siddhant Srivastav' ");
-$connect->query("ALTER TABLE `google_users` DROP COLUMN mentor_name");*/
-$connect->query("ALTER TABLE `google_users_mentors` ADD COLUMN full int(11) DEFAULT 0");/*
+$connect->query("ALTER TABLE `google_users` DROP COLUMN mentor_name");
+$connect->query("ALTER TABLE `google_users_mentors` ADD COLUMN full int(11) DEFAULT 0");
 $connect->query("INSERT INTO `google_users_mentors`(`google_id`, `google_name`, `google_email`) VALUES (106772,'Anmol Singh Seti','iit2016040@iiita.ac.in')");/*
 $connect->query("INSERT INTO `google_users_mentors`(`google_id`, `google_name`, `google_email`) VALUES (106513,'Satyarth Agrahari','IEC2015018@iiita.ac.in')");
 $connect->query("INSERT INTO `google_users_mentors`(`google_id`, `google_name`, `google_email`) VALUES (106514,'Saurabh Mishra','iit2015508@iiita.ac.in')");
