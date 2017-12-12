@@ -68,7 +68,7 @@
     </header>
 
           <div class="container">
-            <center>Wait Wait Wait, This not an error. Become worthy to get your mentor.</center>
+            <center>Wait Wait Wait, This not an error. Become worthy to get your mentor. Don't Worry if you've already been blessed.</center>
             <center><img src="notpass.jpg" alt="You Shall not pass" ></center>
           </div>
   <div class="container" style="display:none;">
