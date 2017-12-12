@@ -149,6 +149,7 @@
 </html>
 <?php
     } else {
+      session_start();
       $authUrl=$_SESSION['authURL'];
       include("headerl.php");
       echo '<div align="center">';
