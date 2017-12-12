@@ -68,6 +68,13 @@ if (isset($_SESSION['access_token'])) {
     
                 if ($c['selected'] == 0) {
                     while ($data = mysqli_fetch_array($ret)) {
+                        echo "<div class='container'>";
+                        echo "<center>Wait Wait Wait, This not an error. Become worthy to get your mentor. Don't Worry if you've already been blessed.</center>";
+                        echo "<center><img src='notpass.jpg' alt='You Shall not pass' ></center>";
+                        echo "</div>";
+                        echo "<div class='container' style='display:none;'>";
+                        echo "<form action='' method='POST' class='form'>";
+
                         echo "<div class='col-lg-3 col-md-3 col-sm-6 col-xs-12'>";
                         echo "<label class='radio-inline'>";
                         echo "<input type='radio' name='optradio' value='".$data['google_email']."'>".$data['google_name'];
