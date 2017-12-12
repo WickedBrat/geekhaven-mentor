@@ -31,10 +31,8 @@ $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors`");
 
  <?php
 
-$connect->query("UPDATE `google_users_mentors` SET max_count=0 WHERE google_name='Sashank Mishra' ");
-$connect->query("UPDATE `google_users_mentors` SET max_count=0 WHERE google_name='Dhvit Mehta' ");
-$connect->query("UPDATE `google_users_mentors` SET max_count=0 WHERE google_name='Abhinav Khare' ");
-$connect->query("UPDATE `google_users_mentors` SET max_count=0 WHERE google_name='Aditya Dewan' ");/*
+$connect->query("UPDATE `google_users` SET selected=0 WHERE google_name='Ayush Agrawal' ");
+$connect->query("UPDATE `google_users` SET selected=0 WHERE google_name='Nayan Agrawal' ");/*
 $connect->query("UPDATE `google_users_mentors` SET max_count=5 WHERE google_name='Siddhant Srivastav' ");
 $connect->query("ALTER TABLE `google_users` DROP COLUMN mentor_name");
 $connect->query("ALTER TABLE `google_users_mentors` ADD COLUMN full int(11) DEFAULT 0");
