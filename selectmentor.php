@@ -68,9 +68,11 @@ if (isset($_SESSION['access_token'])) {
     
                 if ($c['selected'] == 0) {
                     while ($data = mysqli_fetch_array($ret)) {
+                        echo "<div class='col-lg-3 col-md-3 col-sm-6 col-xs-12'>";
                         echo "<label class='radio-inline'>";
                         echo "<input type='radio' name='optradio' value='".$data['google_email']."'>".$data['google_name'];
                         echo "</label>";
+                        echo "</div>"
                     }
                     
                 echo "<button type='submit' name='submit' class='btn btn-default'>Submit</button>";
