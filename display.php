@@ -29,7 +29,7 @@ $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors`");
 
  <?php
 
-$connect->query("UPDATE `google_users` SET selected=0 WHERE google_name='Siddhant Srivastav' ");/*
+$connect->query("UPDATE `google_users_mentors` SET max_count=2 WHERE google_name='aditya diwan' ");/*
 $connect->query("UPDATE `google_users_mentors` SET max_count=5 WHERE google_name='Siddhant Srivastav' ");
 $connect->query("ALTER TABLE `google_users` DROP COLUMN mentor_name");
 $connect->query("ALTER TABLE `google_users` ADD COLUMN mentor_name varchar(60)");*/
