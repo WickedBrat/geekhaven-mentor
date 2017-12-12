@@ -50,7 +50,7 @@ if (isset($_SESSION['access_token'])) {
                 
                         $mail->isHTML(true);                                  // Set email format to HTML
                         $mail->Subject = 'Mentee Allotted';
-                        $mail->Body    = 'Greetings! Alloted mentee to you. His email is '.$useremail.' and his name is'.$usenam;
+                        $mail->Body    = 'Greetings! Alloted mentee to you. His/Her email is '.$useremail.' and his name is '.$usenam;
                 
                         $mail->send();
                     // echo "mail sent";
