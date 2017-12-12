@@ -1,6 +1,6 @@
 <?php 
-  session_start();
-  if (isset($_SESSION['access_token'])) {  
+  /*session_start();
+  if (isset($_SESSION['access_token'])) {  */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,14 +43,13 @@
               <a class="nav-link" href="mentor.php">Home</a>
             </li>
             <li class="nav-item">
-              <?php echo "<a class='nav-link' href='".$redirect_uri."?logout'>Log Out</a>" ?>
+              <?php $redirect_uri="https://mentor-portal.herokuapp.com"; echo "<a class='nav-link' href='".$redirect_uri."?logout'>Log Out</a>" ?>
             </li>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('img/about-bg.jpg')">
       <div class="overlay"></div>
@@ -67,14 +66,14 @@
     </header>
 
 <?php 
-
+/*
    $connect = mysqli_connect("us-cdbr-iron-east-05.cleardb.net", "b061db06849ed7", "e5239436", "heroku_fbd4d972ab0bf1a");
 
   $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors` WHERE google_id=$user->id");
 
   $data = mysqli_fetch_array($ret);
   echo "<center>Your current mentee count is ".$data['max_count'].".</center>";
-
+*/
 ?>
 
 
@@ -149,6 +148,7 @@
 
 </html>
 <?php
+/*
     } else {
       session_start();
       $authUrl=$_SESSION['authURL'];
@@ -159,5 +159,5 @@
       echo '<a class="login" href="' . $authUrl . '"><img src="https://developers.google.com/+/images/branding/sign-in-buttons/Red-signin_Google_base_44dp.png" /></a>';
       echo '</div>';
       include("footerm.php");
-    }
+    }*/
 ?>
