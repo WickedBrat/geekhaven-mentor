@@ -13,6 +13,7 @@ $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors`");
             <td>Mentor Name</td>
             <td>Mentee Count</td>
             <td>Mentor Email</td>
+        <td>Full</td>
         </tr>
         <?php
             while ($data = mysqli_fetch_array($ret)) {   
@@ -20,6 +21,7 @@ $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors`");
                     echo "<td>".$data['google_name']."</td>";
                     echo "<td>".$data['max_count']."</td>";
                     echo "<td>".$data['google_email']."</td>";
+                    echo "<td>".$data['full']."</td>";
                 echo "</tr>";
                 //echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
             }
@@ -55,7 +57,6 @@ $ret = mysqli_query($connect, "SELECT * FROM `google_users`");
         <td>Mentee Name</td>
         <td>Selected or Not </td>
         <td>Mentor Email</td>
-        <td>Full</td>
     </tr>
     <?php
         while ($data = mysqli_fetch_array($ret)) {   
@@ -63,7 +64,6 @@ $ret = mysqli_query($connect, "SELECT * FROM `google_users`");
                 echo "<td>".$data['google_name']."</td>";
                 echo "<td>".$data['selected']."</td>";
                 echo "<td>".$data['mentor_name']."</td>";
-                echo "<td>".$data['full']."</td>";
             echo "</tr>";
             //echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
         }
