@@ -48,10 +48,23 @@ $connect->query("INSERT INTO `google_users_mentors`(`google_id`, `google_name`, 
 echo "<br><br><br><br>";
 $ret = mysqli_query($connect, "SELECT * FROM `google_users`");
 
-while ($data = mysqli_fetch_array($ret)) {
- 
-    echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['selected'].' with mentor name = '.$data['mentor_name'].'<br>';
-}
-
-
 ?>
+<table>
+<thead>
+    <tr>
+        <td>Mentee Name</td>
+        <td>Selected or Not </td>
+        <td>Mentor Email</td>
+    </tr>
+    <?php
+        while ($data = mysqli_fetch_array($ret)) {   
+            echo "<tr>";
+                echo "<td>".$data['google_name']."</td>";
+                echo "<td>".$data['selected']."</td>";
+                echo "<td>".$data['mentor_name']."</td>";
+            echo "</tr>";
+            //echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
+        }
+    ?>
+</thead>
+</table>
