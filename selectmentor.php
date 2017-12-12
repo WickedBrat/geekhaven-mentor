@@ -1,6 +1,6 @@
 <?php 
     
-    $maile=$_POST['optradio'];
+$maile=$_POST['optradio'];
 
 $userid = $_SESSION['userid'];
 $useremail = $_SESSION['useremail'];
@@ -9,7 +9,6 @@ $usenam = $_SESSION['username'];
 $connect = mysqli_connect("us-cdbr-iron-east-05.cleardb.net", "b061db06849ed7", "e5239436", "heroku_fbd4d972ab0bf1a");
 
 $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors` WHERE `max_count`>=0 ");
-
 $retu = mysqli_query($connect, "SELECT * FROM `google_users`");
 
 include("headerm.php");
@@ -17,9 +16,8 @@ include("headerm.php");
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-    require 'vendor/autoload.php';
-
-    $mail = new PHPMailer(true);                              // Passing `true` enables exceptions    
+require 'vendor/autoload.php';
+$mail = new PHPMailer(true);                              // Passing `true` enables exceptions    
 
 if (isset($_POST['submit'])) {
     if(isset($_POST['optradio']))
@@ -46,7 +44,7 @@ if (isset($_POST['submit'])) {
     
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'Mentee Allotted';
-            $mail->Body    = 'Greetings! Alloted mentee to you. His email is '.$useremail.' and his name is'.$usernam;
+            $mail->Body    = 'Greetings! Alloted mentee to you. His email is '.$useremail.' and his name is'.$usenam;
     
             $mail->send();
            // echo "mail sent";
@@ -58,9 +56,9 @@ if (isset($_POST['submit'])) {
         $connect->query("UPDATE google_users SET selected=1 WHERE google_id=$userid");
     }
 }
+
 $a = $connect->query("SELECT * FROM google_users WHERE google_id=$userid");
 $c = mysqli_fetch_array($a);
-
 
     if ($c['selected'] == 0) {
         while ($data = mysqli_fetch_array($ret)) {
@@ -77,9 +75,6 @@ $c = mysqli_fetch_array($a);
         echo "You've selected your mentor! Contact him!";
     }
     
-
-
-
 include("footerm.php");
 
 ?>
