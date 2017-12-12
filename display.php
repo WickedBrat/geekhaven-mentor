@@ -68,3 +68,10 @@ $ret = mysqli_query($connect, "SELECT * FROM `google_users`");
     ?>
 </thead>
 </table>
+
+<?php
+$result = $mysqli->query("SELECT COUNT(mentor_name) as usercount FROM google_users WHERE mentor_name!=NULL");
+$user_count = $result->fetch_all()->usercount;
+
+echo $user_count;
+?>
