@@ -6,29 +6,6 @@ $ret = mysqli_query($connect, "SELECT * FROM `google_users_mentors`");
 
 
 ?>
-
-<table>
-    <thead>
-        <tr>
-            <td>Mentor Name</td>
-            <td>Mentee Count</td>
-            <td>Mentor Email</td>
-        <td>Full</td>
-        </tr>
-        <?php
-            while ($data = mysqli_fetch_array($ret)) {   
-                echo "<tr>";
-                    echo "<td>".$data['google_name']."</td>";
-                    echo "<td>".$data['max_count']."</td>";
-                    echo "<td>".$data['google_email']."</td>";
-                    echo "<td>".$data['full']."</td>";
-                echo "</tr>";
-                //echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
-            }
-        ?>
-    </thead>
-</table>
-
  <?php
 /*
 $connect->query("UPDATE `google_users` SET selected=0 WHERE google_name='Ayush Agrawal' ");
@@ -49,21 +26,19 @@ $connect->query("INSERT INTO `google_users_mentors`(`google_id`, `google_name`, 
 $connect->query("INSERT INTO `google_users_mentors`(`google_id`, `google_name`, `google_email`) VALUES (106522,'Praveen Pourush','iit2015027@iiita.ac.in')");
 */
 echo "<br><br><br><br>";
-$ret = mysqli_query($connect, "SELECT * FROM `google_users`");
+$ret = mysqli_query($connect, "SELECT * FROM `google_users` where selected=1");
 
 ?>
 <table>
 <thead>
     <tr>
         <td>Mentee Name</td>
-        <td>Selected or Not </td>
         <td>Mentor Email</td>
     </tr>
     <?php
         while ($data = mysqli_fetch_array($ret)) {   
             echo "<tr>";
                 echo "<td>".$data['google_name']."</td>";
-                echo "<td>".$data['selected']."</td>";
                 echo "<td>".$data['mentor_name']."</td>";
             echo "</tr>";
             //echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
