@@ -39,7 +39,10 @@ $ret = mysqli_query($connect, "SELECT * FROM `google_users` where selected=1");
         while ($data = mysqli_fetch_array($ret)) {   
             echo "<tr>";
                 echo "<td>".$data['google_name']."</td>";
-                echo "<td>".$data['mentor_name']."</td>";
+                $uo=$data['mentor_name'];
+                $pooo = mysqli_query($connect, "SELECT * FROM `google_users_mentors` where google_email='$uo'");
+                $data2 = mysqli_fetch_array($pooo);
+                echo "<td>".$data2['google_name']."</td>";
             echo "</tr>";
             //echo $data['google_name'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$data['max_count'].'<br>';
         }
