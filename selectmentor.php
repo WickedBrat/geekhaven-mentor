@@ -82,10 +82,10 @@ if (isset($_SESSION['access_token'])) {
     
                 if ($c['selected'] == 0) {
                         echo "<div class='container'>";
-                        echo "<center>Oh C'mon! I'm getting boared. Don't you know Children must be taught how to think, not what to think.</center>";
-                        echo "<center><div class='col-lg-5 col-md-5 col-sm-5 text-center'><form><input type='text' name='answer' placeholder='Enter the answer.'><button class='btn btn-primary' onclick='check(this.form)'>Submit</button></form></div></center>";
-                        echo "<center>Remember use no spaces or capital letters if you want to go further. And be fast to stop the page!</center></div>";
-                        echo "<div class='container' style='display:none;' id='p2'>";
+                        echo "<center>I've had my fun. Here is the list. Huryy up!</center>";
+                        //echo "<center><div class='col-lg-5 col-md-5 col-sm-5 text-center'><form><input type='text' name='answer' placeholder='Enter the answer.'><button class='btn btn-primary' onclick='check(this.form)'>Submit</button></form></div></center>";
+                        //echo "<center>Remember use no spaces or capital letters if you want to go further. And be fast to stop the page!</center></div>";
+                        echo "<div class='container' id='p2'>";
                         echo "<form action='' method='POST' class='form'>";
                     while ($data = mysqli_fetch_array($ret)) {
 
