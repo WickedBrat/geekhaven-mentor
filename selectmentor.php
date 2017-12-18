@@ -50,7 +50,7 @@ if (isset($_SESSION['access_token'])) {
                         $mail->SMTPAuth = true;                               // Enable SMTP authentication
                         $mail->Username = 'geekhaven@iiita.ac.in';                 // SMTP username
                         //$mail->Password = 'fofknwkqhdquubrm'; 
-                        $mail->Password = 'g33kh@ven';                           // SMTP password
+                        $mail->Password = '';                           // SMTP password
                         $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
                         $mail->Port = 465;                                    // TCP port to connect to
                 
